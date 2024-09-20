@@ -22,4 +22,4 @@ DATA_INGESTION_COLLECTION_NAME: str = "DATA_VISA"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion" #it will Create the folder inside the artifact directory
 DATA_INGESTION_FEATURE_STORE_DIR: str = "feature_store" #it will Create the folder inside the artifact directory
 DATA_INGESTION_INGESTED_DIR: str = "ingested"
-DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO: float = 0.2
+DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO: float = 0.2 #train-test split ratio
