@@ -32,15 +32,20 @@ def export_data_into_feature_store(self)->DataFrame:
         On Failure  :   Write an exception log and then raise an exception
         """
         try:
+            #logging the inforamtion
             logging.info(f"Exporting data from mongodb")
             usvisa_data = VisaData()
+            #dataframe
             dataframe = usvisa_data.export_collection_as_dataframe(collection_name=
                                                                    self.data_ingestion_config.collection_name)
+            #shape
             logging.info(f"Shape of dataframe: {dataframe.shape}")
             feature_store_file_path  = self.data_ingestion_config.feature_store_file_path
+            #create directory
             dir_path = os.path.dirname(feature_store_file_path)
             os.makedirs(dir_path,exist_ok=True)
             logging.info(f"Saving exported data into feature store file path: {feature_store_file_path}")
+            #convert the dataframe into csv format
             dataframe.to_csv(feature_store_file_path,index=False,header=True)
             return dataframe
 
