@@ -12,6 +12,7 @@ from visa_approval.data_access.visa_data import VisaData
 
 #Class for dataingestion
 class DataIngestion:
+    #here it taking the data ingestion configuration
     def __init__(self,data_ingestion_config:DataIngestionConfig=DataIngestionConfig()):
         """
         :param data_ingestion_config: configuration for data ingestion
@@ -21,7 +22,7 @@ class DataIngestion:
         except Exception as e:
             raise visaException(e,sys)
 
-#Method
+#Method to export the data into feature store
 def export_data_into_feature_store(self)->DataFrame:
         """
         Method Name :   export_data_into_feature_store
