@@ -11,7 +11,12 @@
 #except Exception as e:
     #raise visaException(e,sys)
 
-import os
+#import os
 
-mongo_db_url = os.getenv('MONGODB_URL')
-print(mongo_db_url)
+#mongo_db_url = os.getenv('MONGODB_URL')
+#print(mongo_db_url)
+
+from visa_approval.pipline.training_pipeline import TrainPipeline
+
+obj = TrainPipeline()
+obj.run_pipeline()
