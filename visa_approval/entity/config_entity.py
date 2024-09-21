@@ -26,6 +26,7 @@ class TrainingPipelineConfig:
 # variable------type---------class name
 training_pipeline_config: TrainingPipelineConfig = TrainingPipelineConfig()
 
+#data class decorator for defining the data ingestion config constants
 @dataclass
 class DataIngestionConfig:
     data_ingestion_dir: str = os.path.join(training_pipeline_config.artifact_dir, DATA_INGESTION_DIR_NAME)
