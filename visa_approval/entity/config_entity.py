@@ -15,7 +15,9 @@ self.test = "None"
 
 @dataclass
 class TrainingPipelineConfig:
+    #pipeline from constant 
     pipeline_name: str = PIPELINE_NAME
+    #artifact from constant 
     artifact_dir: str = os.path.join(ARTIFACT_DIR, TIMESTAMP)
     timestamp: str = TIMESTAMP
 
