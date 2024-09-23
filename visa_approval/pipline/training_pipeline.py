@@ -2,12 +2,14 @@ import sys
 from visa_approval.exception import visaException
 from visa_approval.logger import logging
 from visa_approval.components.data_ingestion import DataIngestion
+#data validation
+from visa_approval.components.data_validation import DataValidation
 
 #import config entity and artifact entity
 
-from visa_approval.entity.config_entity import (DataIngestionConfig)
+from visa_approval.entity.config_entity import (DataIngestionConfig,DataValidationConfig)
 
-from visa_approval.entity.artifact_entity import (DataIngestionArtifact)
+from visa_approval.entity.artifact_entity import (DataIngestionArtifact,DataValidationArtifact)
 
 #Create a class and insdie that i have to intiate the data ingestion
 
