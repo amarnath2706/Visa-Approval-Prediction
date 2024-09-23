@@ -32,7 +32,7 @@ class DataTransformation:
             self._schema_config = read_yaml_file(file_path=SCHEMA_FILE_PATH)
         except Exception as e:
             raise visaException(e, sys)
-
+    #The method we can write without using self keyword and i can access this function anywhere
     @staticmethod
     def read_data(file_path) -> pd.DataFrame:
         try:
