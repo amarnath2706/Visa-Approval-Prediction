@@ -68,7 +68,8 @@ class TrainPipeline:
         This method of TrainPipeline class is responsible for running complete pipeline
         """
         try:
-            data_ingestion_artifact = self.start_data_ingestion()   
+            data_ingestion_artifact = self.start_data_ingestion() 
+            data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)  
 
         except Exception as e:
             raise visaException(e, sys)
