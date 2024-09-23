@@ -33,6 +33,8 @@ DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO: float = 0.2 #train-test split ratio
 
 #Data validation related constants
 
-DATA_VALIDATION_DIR_NAME: str = "data_validation"
-DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report"
+DATA_VALIDATION_DIR_NAME: str = "data_validation" #it will Create the folder inside the artifact directory
+DATA_VALIDATION_DRIFT_REPORT_DIR: str = "drift_report" #it will Create the folder inside the artifact directory
 DATA_VALIDATION_DRIFT_REPORT_FILE_NAME: str = "report.yaml"
+
+#Data transformation related constants
