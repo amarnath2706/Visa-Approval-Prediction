@@ -23,6 +23,11 @@ CURRENT_YEAR = date.today().year
 PREPROCSSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 SCHEMA_FILE_PATH = os.path.join("config", "schema.yaml")
 
+#Evaluation
+AWS_ACCESS_KEY_ID_ENV_KEY = "AWS_ACCESS_KEY_ID"
+AWS_SECRET_ACCESS_KEY_ENV_KEY = "AWS_SECRET_ACCESS_KEY"
+REGION_NAME = "us-east-1"
+
 #Data ingestion related constants
 DATA_INGESTION_COLLECTION_NAME: str = "DATA_VISA"
 DATA_INGESTION_DIR_NAME: str = "data_ingestion" #it will Create the folder inside the artifact directory
