@@ -58,7 +58,7 @@ MODEL_TRAINER_MODEL_CONFIG_FILE_PATH: str = os.path.join("config", "model.yaml")
 
 #Model Evaluation constants
 
-MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02
+MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: float = 0.02 #Set the threshold to your wish, in the production set threhold = 0.07
 MODEL_BUCKET_NAME = "visa-model2024"
 MODEL_PUSHER_S3_KEY = "model-registry"
 
