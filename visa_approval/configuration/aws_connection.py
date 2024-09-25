@@ -1,4 +1,4 @@
-import boto3
+import boto3 #python library help to connect with aws   
 import os
 from visa_approval.constants import AWS_SECRET_ACCESS_KEY_ENV_KEY, AWS_ACCESS_KEY_ID_ENV_KEY,REGION_NAME
 
