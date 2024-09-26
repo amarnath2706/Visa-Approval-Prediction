@@ -1,13 +1,13 @@
 from visa_approval.entity.config_entity import ModelEvaluationConfig
 from visa_approval.entity.artifact_entity import ModelTrainerArtifact, DataIngestionArtifact, ModelEvaluationArtifact
 from sklearn.metrics import f1_score
-from visa_approval.exception import USvisaException
+from visa_approval.exception import visaException
 from visa_approval.constants import TARGET_COLUMN, CURRENT_YEAR
-from us_visa.logger import logging
+from visa_approval.logger import logging
 import sys
 import pandas as pd
 from typing import Optional
-from us_visa.entity.s3_estimator import USvisaEstimator
+from visa_approval.entity.s3_estimator import USvisaEstimator
 from dataclasses import dataclass
 from us_visa.entity.estimator import USvisaModel
 from us_visa.entity.estimator import TargetValueMapping
