@@ -24,7 +24,7 @@ class USvisaEstimator:
     def is_model_present(self,model_path):
         try:
             return self.s3.s3_key_path_available(bucket_name=self.bucket_name, s3_key=model_path)
-        except USvisaException as e:
+        except visaException as e:
             print(e)
             return False
 
