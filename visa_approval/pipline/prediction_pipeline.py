@@ -44,7 +44,7 @@ class USvisaData:
 
         except Exception as e:
             raise visaException(e, sys) from e
-
+    #dictionary to dataframe
     def get_usvisa_input_data_frame(self)-> DataFrame:
         """
         This function returns a DataFrame from USvisaData class input
@@ -57,7 +57,7 @@ class USvisaData:
         except Exception as e:
             raise visaException(e, sys) from e
 
-
+    #convert everything into dictionary
     def get_usvisa_data_as_dict(self):
         """
         This function returns a dictionary from USvisaData class input 
