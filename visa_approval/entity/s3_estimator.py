@@ -50,7 +50,7 @@ class USvisaEstimator:
                                 remove=remove
                                 )
         except Exception as e:
-            raise USvisaException(e, sys)
+            raise visaException(e, sys)
 
 
     def predict(self,dataframe:DataFrame):
