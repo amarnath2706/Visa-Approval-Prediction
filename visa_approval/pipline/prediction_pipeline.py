@@ -11,6 +11,7 @@ from visa_approval.utils.main_utils import read_yaml_file
 from pandas import DataFrame
 
 
+#getting input from the user (independent features)
 class USvisaData:
     def __init__(self,
                 continent,
