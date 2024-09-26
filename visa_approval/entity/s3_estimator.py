@@ -4,7 +4,8 @@ from visa_approval.entity.estimator import USvisaModel
 import sys
 from pandas import DataFrame
 
-
+#get model from the production server and will do the prediction (compare our current model as well as my production model)
+#If one of the model is working fine current model or production model then i push the respective better model and to the prediction 
 class USvisaEstimator:
     """
     This class is used to save and retrieve us_visas model in s3 bucket and to do prediction
