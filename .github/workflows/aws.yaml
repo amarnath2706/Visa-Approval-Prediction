@@ -1,3 +1,4 @@
+#yaml file to perform the CICD automatically
 name: Deploy Application Docker Image to EC2 instance
 
 on:
