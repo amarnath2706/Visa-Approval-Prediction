@@ -29,7 +29,7 @@ class ModelEvaluation:
             self.data_ingestion_artifact = data_ingestion_artifact
             self.model_trainer_artifact = model_trainer_artifact
         except Exception as e:
-            raise USvisaException(e, sys) from e
+            raise visaException(e, sys) from e
 
     def get_best_model(self) -> Optional[USvisaEstimator]:
         """
@@ -49,7 +49,7 @@ class ModelEvaluation:
                 return usvisa_estimator
             return None
         except Exception as e:
-            raise  USvisaException(e,sys)
+            raise  visaException(e,sys)
 
     def evaluate_model(self) -> EvaluateModelResponse:
         """
@@ -88,7 +88,7 @@ class ModelEvaluation:
             return result
 
         except Exception as e:
-            raise USvisaException(e, sys)
+            raise visaException(e, sys)
 
     def initiate_model_evaluation(self) -> ModelEvaluationArtifact:
         """
@@ -111,4 +111,4 @@ class ModelEvaluation:
             logging.info(f"Model evaluation artifact: {model_evaluation_artifact}")
             return model_evaluation_artifact
         except Exception as e:
-            raise USvisaException(e, sys) from e
+            raise visaException(e, sys) from e
