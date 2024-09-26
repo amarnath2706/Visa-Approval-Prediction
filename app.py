@@ -12,10 +12,12 @@ from visa_approval.constants import APP_HOST, APP_PORT
 from visa_approval.pipline.prediction_pipeline import USvisaData, USvisaClassifier
 from visa_approval.pipline.training_pipeline import TrainPipeline
 
+#initialize the fast api
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+#look for the template folder while the execution starts and the HTML will be rendered
 templates = Jinja2Templates(directory='templates')
 
 origins = ["*"]
@@ -28,6 +30,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+#Collecting data from the user
 class DataForm:
     def __init__(self, request: Request):
         self.request: Request = request
@@ -60,7 +63,7 @@ class DataForm:
 async def index(request: Request):
 
     return templates.TemplateResponse(
-            "usvisa.html",{"request": request, "context": "Rendering"})
+            "visa.html",{"request": request, "context": "Rendering"})
 
 
 @app.get("/train")
