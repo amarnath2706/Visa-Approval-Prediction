@@ -14,9 +14,17 @@ from visa_approval.components.model_evaluation import ModelEvaluation
 
 #import config entity and artifact entity
 
-from visa_approval.entity.config_entity import (DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig)
+from visa_approval.entity.config_entity import (DataIngestionConfig,
+                                                DataValidationConfig,
+                                                DataTransformationConfig,
+                                                ModelTrainerConfig,
+                                                ModelEvaluationConfig)
 
-from visa_approval.entity.artifact_entity import (DataIngestionArtifact,DataValidationArtifact,DataTransformationArtifact,ModelTrainerArtifact)
+from visa_approval.entity.artifact_entity import (DataIngestionArtifact,
+                                                  DataValidationArtifact,
+                                                  DataTransformationArtifact,
+                                                  ModelTrainerArtifact,
+                                                  ModelEvaluationArtifact)
 
 #Create a class and insdie that i have to intiate the data ingestion
 
@@ -26,6 +34,7 @@ class TrainPipeline:
         self.data_validataion_config = DataValidationConfig()
         self.data_transformation_config = DataTransformationConfig()
         self.model_trainer_config = ModelTrainerConfig()
+        self.model_evaluation_config = ModelEvaluationConfig()
 
     def start_data_ingestion(self) -> DataIngestionArtifact:
         """
@@ -94,6 +103,21 @@ class TrainPipeline:
             model_trainer_artifact = model_trainer.initiate_model_trainer()
             return model_trainer_artifact
 
+        except Exception as e:
+            raise visaException(e, sys)
+        
+
+    def start_model_evaluation(self, data_ingestion_artifact: DataIngestionArtifact,
+                               model_trainer_artifact: ModelTrainerArtifact) -> ModelEvaluationArtifact:
+        """
+        This method of TrainPipeline class is responsible for starting modle evaluation
+        """
+        try:
+            model_evaluation = ModelEvaluation(model_eval_config=self.model_evaluation_config,
+                                               data_ingestion_artifact=data_ingestion_artifact,
+                                               model_trainer_artifact=model_trainer_artifact)
+            model_evaluation_artifact = model_evaluation.initiate_model_evaluation()
+            return model_evaluation_artifact
         except Exception as e:
             raise visaException(e, sys)
 
