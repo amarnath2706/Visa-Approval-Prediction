@@ -1,5 +1,5 @@
 from visa_approval.cloud_storage.aws_storage import SimpleStorageService
-from us_visa.exception import USvisaException
+from visa_approval.exception import USvisaException
 from us_visa.entity.estimator import USvisaModel
 import sys
 from pandas import DataFrame
