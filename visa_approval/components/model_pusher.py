@@ -7,7 +7,7 @@ from visa_approval.entity.artifact_entity import ModelPusherArtifact, ModelEvalu
 from visa_approval.entity.config_entity import ModelPusherConfig
 from visa_approval.entity.s3_estimator import USvisaEstimator
 
-
+#upload the file to the s3 Bucket
 class ModelPusher:
     def __init__(self, model_evaluation_artifact: ModelEvaluationArtifact,
                  model_pusher_config: ModelPusherConfig):
