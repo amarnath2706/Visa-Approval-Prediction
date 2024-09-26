@@ -8,6 +8,8 @@ from visa_approval.components.data_validation import DataValidation
 from visa_approval.components.data_transformation import DataTransformation
 #model trainer
 from visa_approval.components.model_trainer import ModelTrainer
+#model evaluation
+from visa_approval.components.model_evaluation import ModelEvaluation
 
 
 #import config entity and artifact entity
